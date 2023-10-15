@@ -1,0 +1,202 @@
+@mixin pad{
+  @media(max-width: 768px){
+	@content;
+  }
+}
+@mixin mobile{
+  @media(max-width: 568px){
+	@content;
+  }
+}
+.banner{
+  margin-bottom: 60px;
+  @include pad(){
+    max-width: 100%;
+  }
+  @include mobile(){
+    width: 375px;
+    margin: 0px;
+  }
+}
+.content{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  @include mobile(){
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 0;
+  }
+}
+.sidebar{
+  font-size: 24px;
+  line-height: 40px;
+  text-align: center;
+  width: 30%;
+  font-weight: bold;
+  margin-right: 20px;
+  li{
+    border: 1px solid $gray;
+  }
+  h3{
+    color: #fff;
+    background: $green;
+    padding: 16px 0;
+  }
+  a{
+    display: block;
+    text-decoration: none;
+    padding: 16px 0;
+    color: $green;
+  }
+  a:hover{
+    text-decoration: none;
+    color: $green;
+    background: $gray;
+  }
+  @include mobile(){
+    width: 100%;
+    margin:  0 0 30px 0; 
+  }
+}
+.desert{
+  width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  @include mobile(){
+    width: 315px;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.detail{
+  position: relative;
+  text-align: center;
+  margin-bottom: 20px;
+  @include pad(){
+    width: 48%;
+  }
+  @include mobile(){
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  img{
+    @include pad(){
+      width: 100%;
+    }
+  }
+}
+.addcart{
+  display: block;
+  font-weight: bold;
+  font-size: 24px;
+  color: $green;
+  padding: 16px 0px;
+  background: $gray;
+  text-decoration: none;
+  &:hover{
+    color: $gray;
+    background: $green;
+  }
+}
+.heart{
+  position: absolute;
+  right: 22px;
+  top: 19px;
+  color: $green;
+}
+.label{
+  position: absolute;
+  top: 0;
+  left: 20px;
+  width: 36px;
+  span{
+    display: block;
+    color: $gray;
+    background: $green;
+    font-weight: bold;
+    padding: 10px;
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+.namebar{
+  font-size: 20px;
+  color: $green;
+  display: flex;
+  border: 1px solid $gray;
+  span{
+    display: block;
+    width: 40%;
+    line-height: 24px;
+    font-weight: bold;
+    text-align: center;
+    border-left: 1px solid $gray;
+    padding: 14px 0 14px 0;
+    @include pad(){
+      font-size: 16px;
+    }
+    @include mobile(){
+      font-size: 20px;
+    }
+  }
+}
+.name{
+  display: block;
+  width: 60%;
+  line-height: 20px;
+  padding:14px 0;
+  text-align: center;
+  @include pad(){
+    font-size: 18px;
+  }
+  @include mobile(){
+    font-size: 20px;
+  }
+}
+.buttombar {
+  margin-bottom: 60px;
+  @include mobile(){
+    margin-bottom: 30px;
+  }
+}
+.buttom {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  li{
+    font-size: 20px;
+  }
+  @include mobile(){
+    justify-content: center;
+  }
+}
+.arrow{
+  padding: 15.5px 24px 16.5px 24px;
+  border: 1px solid $gray;
+  color: $green;
+  &:hover{
+    background: $gray;
+  }
+}
+.numselect{
+  text-decoration: none;
+  color: $gray;
+  padding: 16px 26px;
+  border: 1px solid $gray;
+  background: $green;
+}
+.num{
+  text-decoration: none;
+  color: $green;
+  padding: 16px 24px;
+  border: 1px solid $gray;
+  &:hover{
+    text-decoration: none;
+    color: $gray;
+    padding: 16px 24px;
+    border: 1px solid $gray;
+    background: $green;
+  }
+}

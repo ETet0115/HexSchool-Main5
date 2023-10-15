@@ -1,0 +1,101 @@
+@mixin pad{
+  @media(max-width: 768px){
+	@content;
+  }
+}
+@mixin mobile{
+  @media(max-width: 568px){
+	@content;
+  }
+}
+
+.donebanner{
+  position: relative;
+  img{
+    width: 940px;
+    margin-bottom: 60px;
+    @include mobile(){
+      display: none;
+      margin-bottom: 0;
+    }
+  }
+  .hiddenbanner{
+    display: none;
+    @include mobile(){
+      display: block;
+      position: relative;
+    }
+  }
+  h3{
+    position: absolute;
+    top: 128px;
+    left: 375px;
+    display: flex;
+    color: $green;
+    @include pad(){
+      left: 220px;
+      top: 90px;
+    }
+    @include mobile(){
+      top: 210px;
+      left: 90px;
+    }
+    span{
+      width:20px;
+      height:20px;
+      border-radius:50%;
+      font-size:14px;
+      color: #fff;
+      line-height: 20px;
+      text-align:center;
+      background: $green;
+    }
+  }
+  .success{
+    position: absolute;
+    margin: 0;
+    top: 182px;
+    left: 373px;
+    width: 189px;
+    height: 45px;
+    @include pad(){
+      display: block;
+      left: 220px;
+      top: 140px;
+    }
+    @include mobile(){
+      top: 263px;
+      left: 87px;
+    }
+  }
+
+  a{
+    position: absolute;
+    top: 279px;
+    left: 320px;
+    font-size: 24px;
+    font-weight: bold;
+    color: $green;
+    background: $yellow;
+    padding: 17px 102px;
+    text-decoration: none;
+    @include pad(){
+      padding: 10px 40px;
+      left: 225px;
+      top: 210px;
+    }
+    @include mobile(){
+      position: static;
+      display: block;
+      top: 487px;
+      left: 0px;
+      text-align: center;
+      width: 375px;
+      padding: 20px 0;
+    }
+    &:hover{
+      color: $yellow;
+      background: $green;
+    }
+  }
+}

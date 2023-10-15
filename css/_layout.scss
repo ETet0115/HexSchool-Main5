@@ -1,0 +1,319 @@
+@mixin pad{
+  @media(max-width: 768px){
+	@content;
+  }
+}
+@mixin mobile{
+  @media(max-width: 568px){
+	@content;
+  }
+}
+// header
+.container {
+  max-width: 940px;
+  margin: 0 auto;
+  @include pad(){
+    max-width: 640px;
+  }
+  @include mobile(){
+    width: 375px;
+  }
+}
+.header {
+  margin: 30px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  @include pad(){
+    width: 100%;
+    justify-content: space-around;
+  }
+  .burgerlist{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    @include pad(){
+      position: absolute;
+      left: 0;
+      top: 64px;
+      width: 100%;
+      transition: all 0.8s;
+      overflow: hidden;
+      background: white;
+      flex-direction: column;
+      max-height: 0;
+      text-align: center;
+      &.active{
+        max-height: 190px;
+        z-index: 999;
+      }
+    }
+    li{
+      @include pad(){
+        width: 100%;
+        &:hover{
+          background: $gray;
+        }
+      }
+    }
+    a{
+      @include pad(){
+        font-size: 20px;
+        padding: 10px 0;
+        text-align: center;
+        margin: 0;
+      }
+    }
+  }
+  a{
+    display: block;
+    font-size: 16px;
+    color: $green;
+    line-height: 22px;
+    margin-left: 60px;
+    font-weight: bold;
+    padding: 8px;
+  }
+  a:hover{
+    border-bottom: 1px solid $green;
+  }
+  h1{
+    @include pad(){
+      display: none;
+    }
+    a{
+      background-image: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/student-week1/logo-all-dark.svg);
+      background: contain;
+      height: 40px;
+      width: 211px;
+      display: block;
+      text-indent: 150%;
+      overflow: hidden;
+      white-space: nowrap;
+      background-repeat: no-repeat;
+      margin: 0;
+      background-position: left center;
+      &:hover{
+        border-bottom: 0;
+      }
+    }
+  }
+  .burger{
+    display: none;
+    border: none;
+    background: transparent;
+    padding: 6px;
+    cursor: pointer;
+    &:focus{
+      outline: none;
+    }
+    @include pad(){
+      display: block;
+    }
+  }
+  .hidelogo{
+    display: none;
+    background-image: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/student-week1/logotype-lg-dark.svg);
+    background: contain;
+    height: 17px;
+    width: 114px;
+    text-indent: 110%;
+    overflow: hidden;
+    white-space: nowrap;
+    background-repeat: no-repeat;
+    margin: 0;
+    background-position: center center;
+    &:hover{
+      border-bottom: 0;
+    }
+    @include pad(){
+      display: block;
+    }
+  }
+  .cart{
+    @include pad(){
+      display: none;
+    }
+    img{
+      @include pad(){
+        display: none;
+      }
+    }
+  }
+  .hidecart{
+    display: none;
+    background-image: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/student-week1/shopping_cart.png);
+    background: contain;
+    height: 20px;
+    width: 20px;
+    text-indent: 150%;
+    overflow: hidden;
+    white-space: nowrap;
+    background-repeat: no-repeat;
+    margin: 0;
+    background-position: center center;
+    &:hover{
+      border-bottom: 0;
+    }
+    @include pad(){
+      display: block;
+    }
+  }
+}
+// footer
+.mailbar{
+  background: #3f5d45;
+  color: white;
+  font-size: 24px;
+  line-height: 29px;
+  padding: 30px 0;
+}
+.mailcontainer{
+  max-width: 780px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  @include pad(){
+    max-width: 640px;
+  }
+  @include mobile(){
+    align-items: center;
+    flex-direction: column;
+    max-width: 375px;
+  }
+}
+.title{
+  display: flex;
+  align-items: center;
+  img{
+    width: 40px;
+    margin-right: 20px;
+  }
+  @include mobile(){
+    margin-bottom: 30px;
+  }
+}
+.mailbox{
+  display: flex;
+  a{
+    background: $yellow; 
+    padding: 20px 26px;
+    color: $green;
+    &:hover{
+      color: $yellow;
+      background: $lightgray;
+    }
+    i{
+      width: 16px;
+      height: 16px;
+    }
+  }
+  input{
+    border-style: hidden;
+    background-color: $gray;
+    width: 100%;
+    line-height:20px;
+    color: $green;
+    font-weight: bold;
+    padding: 16px;
+  }
+  &:focus{
+    outline: none;
+  }
+}
+.mail{
+  display: flex;
+  align-items: center;
+  background: $gray;
+  width: 296px;
+  i{
+    width: 24px;
+    height: 24px;
+    margin-left: 20px;
+    color: $green;
+  }
+  @include mobile(){
+    width: 251px;
+  }
+}
+.footer{
+  background: $gray;
+  color: $green;
+}
+.footercontainer{
+  display: flex;
+  margin: 0 auto;
+  max-width: 780px;
+  padding: 30px 0;
+  justify-content: space-between;
+  align-items: center;
+  @include pad(){
+    max-width: 640px;
+  }
+  @include mobile(){
+    width: 345px;
+    padding-left: 30px;
+    padding-bottom: 37px;
+  }
+}
+.footerleft{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 9px;
+  img{
+    width: 171.22px;
+    padding-bottom: 80px;
+  }
+  @include mobile(){
+    height: 134px;
+  }
+}
+.info{
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: bold;
+}
+.footerright{
+  height: 218px;
+  width: 59px;
+  @include mobile(){
+    display: none;
+  }
+}
+.footerbottom{
+  font-family: times;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  font-size: 16px;
+  line-height: 19px;
+  margin: 0 auto;
+  max-width: 780px;
+  padding-bottom: 30px;
+  @include pad(){
+    max-width: 640px;
+  }
+  @include mobile(){
+    width: 345px;
+    flex-direction: column;
+    align-items: start;
+    padding-left: 30px;
+    margin-left: 0 auto;
+    margin-top: 30px;
+  }
+  span{
+    @include mobile(){
+      margin-top: 23px;
+    }
+  }
+}
+.btn{
+  display: flex;
+  flex-direction: row;
+  img{
+    width: 32px;
+    margin-right: 8px;
+  }
+}

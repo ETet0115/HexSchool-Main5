@@ -1,0 +1,204 @@
+@mixin pad{
+  @media(max-width: 768px){
+	@content;
+  }
+}
+@mixin mobile{
+  @media(max-width: 568px){
+	@content;
+  }
+}
+.billbar{
+  display: flex;
+  max-width: 780px;
+  margin: 0 auto;
+  justify-content: space-between;
+  @include mobile(){
+    width: 375px;
+    flex-wrap: wrap;
+  }
+}
+.billleft{
+  width: 60%;
+  @include mobile(){
+    width: 100%;
+  }
+}
+.billform{
+  padding: 30px 40px;
+  background: $green;
+  font-weight: bold;
+  
+  li{
+    color: $gray;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+  h3{
+    font-size: 36px;
+    color: $gray;
+  }
+  h4{
+    display: flex;
+    align-items: center;
+  }
+  span{
+    display: block;
+    width:20px;
+    height:20px;
+    border-radius:50%;
+    font-size:14px;
+    color: $green;
+    line-height: 20px;
+    text-align:center;
+    background: $gray; 
+    border: 2px solid $green;
+  }
+  .unfinished{
+    border: 5px double $green;
+    width: 14px;
+    height: 14px;
+    font-size: 8px;
+    line-height: 8px;
+  }
+  input{
+    border-style: hidden;
+    background-color: $gray;
+    font-size: 16px;
+    line-height: 20px;
+    width: 100%;
+    color: $green;
+    padding: 16px;
+    &::placeholder{
+      color: $lightgray;
+    }
+    &:focus{
+      outline: none;
+    }
+  }
+}
+.submit{
+  font-size: 24px;
+  display: block;
+  font-weight: bold;
+  background: $yellow;
+  text-decoration: none;
+  color: $green;
+  text-align: center;
+  padding: 19px 0;
+  &:hover{
+    background: $lightgray;
+    color: $yellow;
+  }
+
+}
+.receipt{
+  margin-bottom: 14px;
+  .clicked{
+    display: block;
+    color: $green;
+    text-decoration: none;
+    background: $gray;
+  }
+  a{
+    width: 50%;
+    color: $gray;
+    font-size: 20px;
+    padding: 14px 0;
+    text-align: center;
+    border: 1px solid $gray;
+    display: block;
+    text-decoration: none;
+  }
+  a:hover{
+    background: $gray;
+    color: $green;
+  }
+}
+.formtitle{
+  margin-bottom: 30px;
+}
+.formdetail{
+  margin-bottom: 8px;
+  margin-top: 16px;
+}
+.billright{
+  width: 38%;
+  @include mobile(){
+    display: none;
+  }
+  h3{
+    font-size: 24px;
+    font-weight: bold;
+    color: $lightgray;
+    background: $gray;
+    text-align: center;
+    padding: 16px 0;
+  }
+}
+.billdetail{
+  max-width: 300px;
+  margin-bottom: 20px;
+  ul{
+    padding: 16px 20px;
+    border: 1px solid $gray;
+  }
+  li{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    line-height: 20px;
+    font-size: 16px;
+    color: $lightgray;
+    &:nth-child(3){
+      font-weight: bold;
+      font-size: 20px;
+      margin-top: 16px;
+    }
+  }
+}
+.billlist{
+  margin-bottom: 60px;
+  ul{
+    border: 1px solid $gray;
+    padding: 16px 8px 0 20px;
+    @include pad(){
+      padding-left: 8px;
+    }
+  }
+  li{
+    display: flex;
+    margin-bottom: 16px;
+  }
+  p{
+    color: $lightgray;
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    margin-top: 18px;
+    @include pad(){
+      font-size: 12px;
+    }
+    span{
+      font-size: 20px;
+      font-weight: bold;
+      margin-top: 8px;
+      @include pad(){
+        font-size: 16px;
+      }
+    }
+    
+  }
+  img{
+    width: 120px;
+    height: 80px;
+    margin-right: 20px;
+    @include pad(){
+      margin-right: 8px;
+    }
+  }
+}
+// *{
+//   outline: 1px solid red;
+// }
